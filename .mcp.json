@@ -1,0 +1,24 @@
+{
+  "name": "legal-document-ai-mcp",
+  "description": "MEOK AI Labs \u2014 Legal document toolkit for AI agents: NDA generation, contract clause explanation,",
+  "vendor": "MEOK AI Labs",
+  "homepage": "https://meok.ai",
+  "repository": "https://github.com/CSOAI-ORG/legal-document-ai-mcp",
+  "runtime": "python",
+  "entrypoint": "server.py",
+  "tools": [
+    "generate_nda",
+    "explain_clause",
+    "define_legal_term",
+    "check_compliance",
+    "case_summary"
+  ],
+  "categories": [
+    "Legal",
+    "Document Generation"
+  ],
+  "pricing": {
+    "free": "50 calls/day",
+    "pro": "$9/mo"
+  }
+}
