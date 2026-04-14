@@ -1,24 +1,124 @@
 {
   "name": "legal-document-ai-mcp",
-  "description": "MEOK AI Labs \u2014 Legal document toolkit for AI agents: NDA generation, contract clause explanation,",
-  "vendor": "MEOK AI Labs",
-  "homepage": "https://meok.ai",
-  "repository": "https://github.com/CSOAI-ORG/legal-document-ai-mcp",
-  "runtime": "python",
-  "entrypoint": "server.py",
+  "description": "**By MEOK AI Labs** | [meok.ai](https://meok.ai)",
+  "version": "1.0.0",
   "tools": [
-    "generate_nda",
-    "explain_clause",
-    "define_legal_term",
-    "check_compliance",
-    "case_summary"
-  ],
-  "categories": [
-    "Legal",
-    "Document Generation"
-  ],
-  "pricing": {
-    "free": "50 calls/day",
-    "pro": "$9/mo"
-  }
+    {
+      "name": "generate_nda",
+      "description": "Generate a Non-Disclosure Agreement template with customizable terms.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "party_a": {
+            "type": "string"
+          },
+          "party_b": {
+            "type": "string"
+          },
+          "nda_type": {
+            "type": "string"
+          },
+          "duration_months": {
+            "type": "integer"
+          },
+          "jurisdiction": {
+            "type": "string"
+          },
+          "scope": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "party_a",
+          "party_b"
+        ]
+      }
+    },
+    {
+      "name": "explain_clause",
+      "description": "Analyze a contract clause in plain language. Detects clause type,",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "clause_text": {
+            "type": "string"
+          },
+          "context": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "clause_text"
+        ]
+      }
+    },
+    {
+      "name": "define_legal_term",
+      "description": "Look up a legal term with definition, context, and example usage.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "term": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "term"
+        ]
+      }
+    },
+    {
+      "name": "check_compliance",
+      "description": "Check a document against compliance framework requirements. Scans for",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "document_text": {
+            "type": "string"
+          },
+          "framework": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "document_text"
+        ]
+      }
+    },
+    {
+      "name": "case_summary",
+      "description": "Generate a structured legal case summary using the IRAC framework",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "case_name": {
+            "type": "string"
+          },
+          "parties": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "facts": {
+            "type": "string"
+          },
+          "legal_issues": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "holding": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "case_name",
+          "parties",
+          "facts"
+        ]
+      }
+    }
+  ]
 }

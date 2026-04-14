@@ -1,10 +1,67 @@
 name: legal-document-ai-mcp
-description: "MEOK AI Labs — Legal document toolkit for AI agents: NDA generation, contract clause explanation,"
-vendor: MEOK AI Labs
-homepage: https://meok.ai
-repository: https://github.com/CSOAI-ORG/legal-document-ai-mcp
-license: MIT
-categories: [Legal, Document Generation]
-tags: [legal-document, contract-generation, legal-template, legal-drafting]
-runtime: python
-entrypoint: server.py
+description: '**By MEOK AI Labs** | [meok.ai](https://meok.ai)'
+version: 1.0.0
+tools:
+- name: generate_nda
+  description: Generate a Non-Disclosure Agreement template with customizable terms.
+  parameters:
+  - name: party_a
+    type: string
+    required: true
+  - name: party_b
+    type: string
+    required: true
+  - name: nda_type
+    type: string
+    required: false
+  - name: duration_months
+    type: integer
+    required: false
+  - name: jurisdiction
+    type: string
+    required: false
+  - name: scope
+    type: string
+    required: false
+- name: explain_clause
+  description: Analyze a contract clause in plain language. Detects clause type,
+  parameters:
+  - name: clause_text
+    type: string
+    required: true
+  - name: context
+    type: string
+    required: false
+- name: define_legal_term
+  description: Look up a legal term with definition, context, and example usage.
+  parameters:
+  - name: term
+    type: string
+    required: true
+- name: check_compliance
+  description: Check a document against compliance framework requirements. Scans for
+  parameters:
+  - name: document_text
+    type: string
+    required: true
+  - name: framework
+    type: string
+    required: false
+- name: case_summary
+  description: Generate a structured legal case summary using the IRAC framework
+  parameters:
+  - name: case_name
+    type: string
+    required: true
+  - name: parties
+    type: array
+    required: true
+  - name: facts
+    type: string
+    required: true
+  - name: legal_issues
+    type: array
+    required: false
+  - name: holding
+    type: string
+    required: false

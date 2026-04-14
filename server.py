@@ -11,6 +11,11 @@ Install: pip install mcp
 Run:     python server.py
 """
 
+
+import sys, os
+sys.path.insert(0, os.path.expanduser('~/clawd/meok-labs-engine/shared'))
+from auth_middleware import check_access
+
 import re
 from collections import defaultdict
 from datetime import datetime, timedelta
@@ -443,7 +448,7 @@ mcp = FastMCP(
 @mcp.tool()
 def generate_nda(party_a: str, party_b: str, nda_type: str = "mutual",
                  duration_months: int = 24, jurisdiction: str = "State of Delaware",
-                 scope: str = "exploring a potential business relationship") -> dict:
+                 scope: str = "exploring a potential business relationship", api_key: str = "") -> dict:
     """Generate a Non-Disclosure Agreement template with customizable terms.
 
     Args:
@@ -454,6 +459,10 @@ def generate_nda(party_a: str, party_b: str, nda_type: str = "mutual",
         jurisdiction: Governing law jurisdiction
         scope: Purpose/scope of the NDA
     """
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     err = _check_rate_limit()
     if err:
         return {"error": err}
@@ -464,7 +473,7 @@ def generate_nda(party_a: str, party_b: str, nda_type: str = "mutual",
 
 
 @mcp.tool()
-def explain_clause(clause_text: str, context: str = "") -> dict:
+def explain_clause(clause_text: str, context: str = "", api_key: str = "") -> dict:
     """Analyze a contract clause in plain language. Detects clause type,
     readability, risk indicators, and key obligations.
 
@@ -472,6 +481,10 @@ def explain_clause(clause_text: str, context: str = "") -> dict:
         clause_text: The contract clause text to analyze
         context: Optional context about the agreement type
     """
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     err = _check_rate_limit()
     if err:
         return {"error": err}
@@ -482,12 +495,16 @@ def explain_clause(clause_text: str, context: str = "") -> dict:
 
 
 @mcp.tool()
-def define_legal_term(term: str) -> dict:
+def define_legal_term(term: str, api_key: str = "") -> dict:
     """Look up a legal term with definition, context, and example usage.
 
     Args:
         term: Legal term to define (e.g. "force majeure", "indemnification")
     """
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     err = _check_rate_limit()
     if err:
         return {"error": err}
@@ -498,7 +515,7 @@ def define_legal_term(term: str) -> dict:
 
 
 @mcp.tool()
-def check_compliance(document_text: str, framework: str = "GDPR") -> dict:
+def check_compliance(document_text: str, framework: str = "GDPR", api_key: str = "") -> dict:
     """Check a document against compliance framework requirements. Scans for
     required elements and reports coverage gaps.
 
@@ -506,6 +523,10 @@ def check_compliance(document_text: str, framework: str = "GDPR") -> dict:
         document_text: The document text to check
         framework: Compliance framework (GDPR, HIPAA, SOC2, PCI_DSS)
     """
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     err = _check_rate_limit()
     if err:
         return {"error": err}
@@ -517,7 +538,7 @@ def check_compliance(document_text: str, framework: str = "GDPR") -> dict:
 
 @mcp.tool()
 def case_summary(case_name: str, parties: list[str], facts: str,
-                 legal_issues: list[str] = [], holding: str = "") -> dict:
+                 legal_issues: list[str] = [], holding: str = "", api_key: str = "") -> dict:
     """Generate a structured legal case summary using the IRAC framework
     (Issue, Rule, Application, Conclusion).
 
@@ -528,6 +549,10 @@ def case_summary(case_name: str, parties: list[str], facts: str,
         legal_issues: List of legal issues in the case
         holding: Court's holding/decision
     """
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     err = _check_rate_limit()
     if err:
         return {"error": err}
