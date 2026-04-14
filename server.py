@@ -437,8 +437,7 @@ def _case_summary(case_name: str, parties: list[str], facts: str,
 # ---------------------------------------------------------------------------
 mcp = FastMCP(
     "Legal Document AI MCP",
-    instructions="Legal document toolkit: NDA generation, contract clause explanation, legal term definitions, compliance checking, and case summaries. By MEOK AI Labs.",
-)
+    instructions="Legal document toolkit: NDA generation, contract clause explanation, legal term definitions, compliance checking, and case summaries. By MEOK AI Labs.")
 
 
 @mcp.tool()
