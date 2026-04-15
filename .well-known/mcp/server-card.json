@@ -1,0 +1,58 @@
+{
+  "name": "Legal Document AI MCP",
+  "description": "Legal document toolkit: NDA generation, contract clause explanation, legal term definitions, compliance checking, and case summaries. By MEOK AI Labs.",
+  "version": "1.0.0",
+  "protocol_version": "2025-11-25",
+  "publisher": {
+    "name": "MEOK AI Labs",
+    "url": "https://meok.ai",
+    "email": "nicholas@meok.ai"
+  },
+  "repository": "https://github.com/CSOAI-ORG/legal-document-ai-mcp",
+  "license": "MIT",
+  "transport": [
+    "stdio",
+    "streamable-http"
+  ],
+  "authentication": {
+    "type": "api-key",
+    "free_tier": true,
+    "free_limit": "15 calls/day"
+  },
+  "tools": [
+    {
+      "name": "generate_nda",
+      "description": "Generate a Non-Disclosure Agreement template with customizable terms."
+    },
+    {
+      "name": "explain_clause",
+      "description": "Analyze a contract clause in plain language. Detects clause type,"
+    },
+    {
+      "name": "define_legal_term",
+      "description": "Look up a legal term with definition, context, and example usage."
+    },
+    {
+      "name": "check_compliance",
+      "description": "Check a document against compliance framework requirements. Scans for"
+    },
+    {
+      "name": "case_summary",
+      "description": "Generate a structured legal case summary using the IRAC framework"
+    }
+  ],
+  "categories": [
+    "AI & Machine Learning",
+    "Blockchain & Web3",
+    "Legal & Regulatory"
+  ],
+  "pricing": {
+    "free": {
+      "calls_per_day": 15
+    },
+    "pro": {
+      "price": "$29/month",
+      "url": "https://meok.ai/pricing"
+    }
+  }
+}
