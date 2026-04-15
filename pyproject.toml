@@ -22,3 +22,6 @@ Repository = "https://github.com/CSOAI-ORG/legal-document-ai-mcp"
 [tool.hatch.build.targets.wheel]
 packages = ["."]
 only-include = ["server.py"]
+
+[project.scripts]
+legal_document_ai_mcp = "server:main"
