@@ -1,6 +1,6 @@
 {
   "name": "legal-document-ai-mcp",
-  "description": "**By MEOK AI Labs** | [meok.ai](https://meok.ai)",
+  "description": "> **By [MEOK AI Labs](https://meok.ai)** \u2014 Legal document toolkit: NDA generation, contract clause explanation, legal term definitions, complia",
   "version": "1.0.0",
   "tools": [
     {
@@ -95,19 +95,13 @@
             "type": "string"
           },
           "parties": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
+            "type": "array"
           },
           "facts": {
             "type": "string"
           },
           "legal_issues": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
+            "type": "array"
           },
           "holding": {
             "type": "string"

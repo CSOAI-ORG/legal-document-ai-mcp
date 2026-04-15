@@ -1,5 +1,6 @@
 name: legal-document-ai-mcp
-description: '**By MEOK AI Labs** | [meok.ai](https://meok.ai)'
+description: 'Legal document toolkit: NDA generation, contract clause explanation,
+  legal term definitions, complia'
 version: 1.0.0
 tools:
 - name: generate_nda
