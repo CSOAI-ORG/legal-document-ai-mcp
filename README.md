@@ -1,3 +1,5 @@
+[![legal-document-ai-mcp MCP server](https://glama.ai/mcp/servers/CSOAI-ORG/legal-document-ai-mcp/badges/card.svg)](https://glama.ai/mcp/servers/CSOAI-ORG/legal-document-ai-mcp)
+
 <div align="center">
 
 [![GitHub stars](https://img.shields.io/github/stars/CSOAI-ORG/legal-document-ai-mcp)](https://github.com/CSOAI-ORG/legal-document-ai-mcp/stargazers)
