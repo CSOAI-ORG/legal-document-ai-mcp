@@ -1,45 +1,59 @@
-[![legal-document-ai-mcp MCP server](https://glama.ai/mcp/servers/CSOAI-ORG/legal-document-ai-mcp/badges/score.svg)](https://glama.ai/mcp/servers/CSOAI-ORG/legal-document-ai-mcp)
-[![MCP Registry](https://img.shields.io/badge/MCP_Registry-Published-green)](https://registry.modelcontextprotocol.io)
-[![PyPI](https://img.shields.io/pypi/v/legal-document-ai-mcp)](https://pypi.org/project/legal-document-ai-mcp/)
-
-[![legal-document-ai-mcp MCP server](https://glama.ai/mcp/servers/CSOAI-ORG/legal-document-ai-mcp/badges/card.svg)](https://glama.ai/mcp/servers/CSOAI-ORG/legal-document-ai-mcp)
-
 <div align="center">
 
-[![GitHub stars](https://img.shields.io/github/stars/CSOAI-ORG/legal-document-ai-mcp)](https://github.com/CSOAI-ORG/legal-document-ai-mcp/stargazers)
+# Legal Document Ai MCP
 
-# ulegalU documentU aiU mcp
+**MCP server for legal document ai mcp operations**
 
-****By MEOK AI Labs** | [meok.ai](https://meok.ai)**
-
-[![npm version](https://img.shields.io/npm/v/@meok-ai/legal-document-ai-mcp)](https://www.npmjs.com/package/@meok-ai/legal-document-ai-mcp)
+[![PyPI](https://img.shields.io/pypi/v/meok-legal-document-ai-mcp)](https://pypi.org/project/meok-legal-document-ai-mcp/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![MEOK AI Labs](https://img.shields.io/badge/MEOK_AI_Labs-255+_servers-purple)](https://meok.ai)
-
-[Installation](#installation) · [Docs](https://csoai.org) · [Report Bug](https://github.com/CSOAI-ORG/legal-document-ai-mcp/issues)
+[![MEOK AI Labs](https://img.shields.io/badge/MEOK_AI_Labs-MCP_Server-purple)](https://meok.ai)
 
 </div>
 
----
+## Overview
+
+Legal Document Ai MCP provides AI-powered tools via the Model Context Protocol (MCP).
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `generate_nda` | Generate a Non-Disclosure Agreement template with customizable terms. |
+| `explain_clause` | Analyze a contract clause in plain language. Detects clause type, |
+| `define_legal_term` | Look up a legal term with definition, context, and example usage. |
+| `check_compliance` | Check a document against compliance framework requirements. Scans for |
+| `case_summary` | Generate a structured legal case summary using the IRAC framework |
 
 ## Installation
 
 ```bash
-pip install legal-document-ai-mcp
-# or
-npm install -g @meok-ai/legal-document-ai-mcp
+pip install meok-legal-document-ai-mcp
 ```
 
-## Quick Start
+## Usage with Claude Desktop
 
-See the project repository for full documentation and examples.
+Add to your Claude Desktop MCP config (`claude_desktop_config.json`):
 
-## Enterprise Support
+```json
+{
+  "mcpServers": {
+    "legal-document-ai-mcp": {
+      "command": "python",
+      "args": ["-m", "meok_legal_document_ai_mcp.server"]
+    }
+  }
+}
+```
 
-- 📧 nicholas@csoai.org
-- 🌐 [CSOAI.org](https://csoai.org)
+## Usage with FastMCP
+
+```python
+from mcp.server.fastmcp import FastMCP
+
+# This server exposes 5 tool(s) via MCP
+# See server.py for full implementation
+```
 
 ## License
 
-MIT © [CSOAI](https://csoai.org)
-<!-- mcp-name: io.github.CSOAI-ORG/legal-document-ai-mcp -->
+MIT © [MEOK AI Labs](https://meok.ai)
