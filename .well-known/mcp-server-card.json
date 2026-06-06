@@ -1,0 +1,28 @@
+{
+  "name": "legal-document-ai-mcp",
+  "title": "Legal Document Ai Mcp",
+  "description": "AI-powered legal document ai MCP server for agents. Supports generate nda, explain clause, define legal term. By MEOK AI Labs.",
+  "version": "1.0.6",
+  "homepage": "https://meok.ai",
+  "license": "MIT",
+  "transport": {
+    "type": "stdio"
+  },
+  "tools": [
+    {
+      "name": "generate_nda"
+    },
+    {
+      "name": "explain_clause"
+    },
+    {
+      "name": "define_legal_term"
+    },
+    {
+      "name": "check_compliance"
+    },
+    {
+      "name": "case_summary"
+    }
+  ]
+}

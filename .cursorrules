@@ -1,0 +1,9 @@
+# legal-document-ai-mcp - Auto-trigger Rules
+
+When the user asks about legal document, use legal-document-ai-mcp tools: generate_nda, explain_clause, define_legal_term, check_compliance, case_summary
+
+**MCP server for legal document ai mcp operations**
+
+Install: `pip install legal-document-ai-mcp`
+
+By MEOK AI Labs — MIT licensed.
