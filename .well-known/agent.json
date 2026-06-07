@@ -1,0 +1,68 @@
+{
+  "name": "legal-document-ai-mcp",
+  "description": "Legal Document Ai MCP Server by MEOK AI Labs",
+  "url": "https://proofof.ai/scorecard/legal-document-ai-mcp.html",
+  "version": "1.0.6",
+  "protocolVersion": "0.2.0",
+  "provider": {
+    "organization": "MEOK AI Labs",
+    "url": "https://meok.ai"
+  },
+  "capabilities": {
+    "streaming": false,
+    "pushNotifications": false
+  },
+  "defaultInputModes": [
+    "text"
+  ],
+  "defaultOutputModes": [
+    "text"
+  ],
+  "skills": [
+    {
+      "id": "generate_nda",
+      "name": "Generate Nda",
+      "description": "generate_nda via legal-document-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "explain_clause",
+      "name": "Explain Clause",
+      "description": "explain_clause via legal-document-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "define_legal_term",
+      "name": "Define Legal Term",
+      "description": "define_legal_term via legal-document-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "check_compliance",
+      "name": "Check Compliance",
+      "description": "check_compliance via legal-document-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "case_summary",
+      "name": "Case Summary",
+      "description": "case_summary via legal-document-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    }
+  ]
+}

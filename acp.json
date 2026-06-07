@@ -1,0 +1,23 @@
+{
+  "acpVersion": "0.1",
+  "agent": {
+    "name": "legal-document-ai-mcp",
+    "description": "Legal Document Ai MCP Server by MEOK AI Labs",
+    "version": "1.0.6",
+    "provider": "MEOK AI Labs",
+    "interfaces": [
+      {
+        "type": "mcp",
+        "transport": "stdio",
+        "package": "legal-document-ai-mcp"
+      }
+    ],
+    "capabilities": [
+      "generate_nda",
+      "explain_clause",
+      "define_legal_term",
+      "check_compliance",
+      "case_summary"
+    ]
+  }
+}
